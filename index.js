@@ -40,7 +40,7 @@ function playRound(humanChoice, computerChoice) {
       } beats ${computerChoice}`
     );
   } else {
-    computerScore++;
+    computerScore++; 
     console.log(
       `You lose! ${
         computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
@@ -51,3 +51,19 @@ function playRound(humanChoice, computerChoice) {
     `Current Score -> You: ${humanScore}, Computer: ${computerScore}`
   );
 }
+
+function playGame() {
+
+  for (let i = 0; i < 5; i++) {
+    console.log(`Round ${i + 1}:`);
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log(`Final Score -> You: ${humanScore}, Computer: ${computerScore}`);
+}
+
+playGame();
