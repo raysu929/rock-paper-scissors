@@ -8,3 +8,16 @@ return "Paper";
     return "Scissors";
 }
 }
+
+function getHumanChoice() {
+  let user = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+  if (user === "rock" || user === "paper" || user === "scissors") {
+    return user;
+  } else {
+    alert("Invalid choice. Please choose Rock, Paper or Scissors.");
+    return getHumanChoice();
+  }
+}
+
+let humanChoice = getHumanChoice();
+console.log("Your choice: " + humanChoice);
